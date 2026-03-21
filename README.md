@@ -61,7 +61,7 @@ npm run serve
 
 仓库含工作流 [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml)，会：
 
-- **定时**：每日 **北京时间 00:00**（UTC 16:00，cron `0 16 * * *`；若需按 UTC 午夜跑，可改为 `0 0 * * *`）执行 `node hn_deepseek.js -o site/hn-snapshot.json`，并把 `index.html`、`viewer.css`、`viewer.js` 与生成结果一并部署到 **GitHub Pages**。
+- **定时**：每日 **北京时间 06:00**（UTC 22:00，cron `0 22 * * *`；若需按 UTC 午夜跑，可改为 `0 0 * * *`）执行 `node hn_deepseek.js -o site/hn-snapshot.json`，并把 `index.html`、`viewer.css`、`viewer.js` 与生成结果一并部署到 **GitHub Pages**。
 - **手动**：在仓库 **Actions** 中选择 **Deploy to GitHub Pages**，点击 **Run workflow**。
 - **推送**：向默认分支 **`main`** 推送并修改工作流所列路径（脚本、静态页、`package.json` 等）时也会触发构建（便于联调）。
 
