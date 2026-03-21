@@ -1,0 +1,257 @@
+/* 视觉对齐 news.ycombinator.com：顶栏橙、米色底、Verdana、小号字 */
+
+:root {
+  --hn-orange: #ff6600;
+  --hn-bg: #f6f6ef;
+  --hn-text: #000000;
+  --hn-meta: #828282;
+  --hn-link: #000000;
+  /** 大屏下列表与摘要的可读宽度（约 80 字内） */
+  --content-max: 840px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--hn-bg);
+  color: var(--hn-text);
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+}
+
+a {
+  color: var(--hn-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#hn-top {
+  background-color: var(--hn-orange);
+  padding: 2px 4px;
+  line-height: 12pt;
+}
+
+#hn-top table {
+  width: 100%;
+  max-width: var(--content-max);
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+}
+
+#hn-top td {
+  vertical-align: middle;
+}
+
+.hn-logo {
+  border: 1px solid #ffffff;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #ff6600;
+}
+
+.hn-brand {
+  font-weight: bold;
+  font-size: 10pt;
+  margin-left: 4px;
+}
+
+.hn-brand a {
+  color: #000000;
+}
+
+#hn-main {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 8px auto 24px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.hn-intro {
+  margin: 0 0 10px;
+  padding: 0;
+  font-size: 9pt;
+  color: var(--hn-text);
+  line-height: 1.45;
+}
+
+#hn-footer .hn-intro {
+  margin-top: 0;
+}
+
+.hn-meta-banner {
+  color: var(--hn-meta);
+  font-size: 8pt;
+  margin-bottom: 10px;
+}
+
+.hn-meta-banner strong {
+  color: var(--hn-text);
+  font-weight: normal;
+}
+
+.item-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.item-list td {
+  vertical-align: top;
+}
+
+.rank {
+  text-align: left;
+  color: var(--hn-meta);
+  padding: 0 6px 0 0;
+  min-width: 0;
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+/** 与 .rank 同列占位，使 subtext / 摘要 与标题列左缘对齐（勿用 colspan=2 空单元格） */
+.rank-spacer {
+  padding: 0 6px 0 0;
+  width: 1%;
+  vertical-align: top;
+}
+
+.titleline {
+  padding-bottom: 2px;
+}
+
+.titleline a.story-title {
+  font-size: 10pt;
+}
+
+.story-title-cn {
+  font-weight: normal;
+}
+
+.story-title-sep {
+  color: var(--hn-meta);
+  font-weight: normal;
+}
+
+.story-title-en {
+  color: var(--hn-meta);
+  font-weight: normal;
+}
+
+.comhead {
+  font-size: 8pt;
+  color: var(--hn-meta);
+}
+
+.comhead a {
+  color: var(--hn-meta);
+}
+
+.subtext {
+  font-size: 7pt;
+  color: var(--hn-meta);
+  padding-bottom: 4px;
+}
+
+.subtext a {
+  color: var(--hn-meta);
+}
+
+.spacer {
+  height: 5px;
+}
+
+.story-selftext {
+  font-size: 9pt;
+  color: var(--hn-text);
+  margin: 4px 0 8px;
+  line-height: 1.35;
+}
+
+.story-selftext p {
+  margin: 0.5em 0;
+}
+
+.deepseek-cell {
+  padding: 4px 0 8px;
+}
+
+.deepseek-wrap {
+  font-size: 9pt;
+}
+
+.deepseek-body {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.deepseek-block {
+  margin-bottom: 10px;
+}
+
+.deepseek-label {
+  display: block;
+  font-size: 8pt;
+  font-weight: bold;
+  color: var(--hn-meta);
+  margin-bottom: 4px;
+}
+
+.deepseek-text {
+  line-height: 1.45;
+  color: var(--hn-text);
+  white-space: normal;
+}
+
+.deepseek-error {
+  color: #c00;
+  font-size: 8pt;
+  white-space: normal;
+  margin: 0;
+  font-family: Verdana, Geneva, sans-serif;
+  line-height: 1.45;
+  word-wrap: break-word;
+}
+
+#hn-error {
+  color: #c00;
+  font-size: 10pt;
+  padding: 16px;
+  max-width: var(--content-max);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+#hn-footer {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 24px auto;
+  border-top: 2px solid var(--hn-orange);
+  padding: 12px 16px 24px;
+  box-sizing: border-box;
+  font-size: 8pt;
+  color: var(--hn-meta);
+}
+
+.hn-footer-links {
+  margin-top: 8px;
+  font-size: 8pt;
+}
+
+#hn-footer a {
+  color: var(--hn-meta);
+}

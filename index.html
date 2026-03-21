@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hacker News Daily · 本地摘要</title>
+    <link rel="stylesheet" href="viewer.css" />
+  </head>
+  <body>
+    <div id="hn-top">
+      <table>
+        <tr>
+          <td>
+            <span class="hn-logo" aria-hidden="true"></span>
+            <span class="hn-brand"><a href="https://news.ycombinator.com/" target="_blank" rel="noopener noreferrer">Hacker News</a></span>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="hn-error" hidden></div>
+
+    <div id="hn-main">
+      <table class="item-list" id="hn-item-table">
+        <tbody id="hn-items"></tbody>
+      </table>
+    </div>
+
+    <div id="hn-footer">
+      <div id="hn-meta-line" class="hn-meta-banner"></div>
+    </div>
+
+    <script src="viewer.js" type="module"></script>
+  </body>
+</html>

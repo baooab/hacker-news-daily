@@ -1,0 +1,20 @@
+{
+  "name": "hacker-news-daily",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node hn_deepseek.js",
+    "hn": "node hn_deepseek.js",
+    "serve": "npx --yes serve . -p 8080"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.5.0",
+    "dotenv": "^16.4.5",
+    "jsdom": "^25.0.1",
+    "openai": "^4.73.0",
+    "undici": "^6.21.0"
+  }
+}

@@ -1,0 +1,74 @@
+# 定时抓取 HN + DeepSeek 生成 hn-snapshot.json，并部署静态页到 GitHub Pages
+name: Deploy to GitHub Pages
+
+on:
+  # 北京时间每日 00:00（UTC 16:00，无夏令时）
+  schedule:
+    - cron: "0 16 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/deploy-pages.yml"
+      - "hn_deepseek.js"
+      - "package.json"
+      - "package-lock.json"
+      - "index.html"
+      - "viewer.css"
+      - "viewer.js"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site (snapshot + static files)
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          # CI 中可适当缩短外链抓取超时；不需要可删
+          HN_FETCH_RETRIES: "5"
+        run: |
+          set -e
+          mkdir -p site
+          cp index.html viewer.css viewer.js site/
+          : > site/.nojekyll
+          node hn_deepseek.js -o site/hn-snapshot.json
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

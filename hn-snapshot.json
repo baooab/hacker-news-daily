@@ -1,0 +1,1090 @@
+{
+  "meta": {
+    "hnFetchedAt": "2026-03-21T15:21:12.580Z",
+    "deepseekCompletedAt": "2026-03-21T15:24:35.507Z",
+    "deepseekModel": "deepseek-chat",
+    "hnApiBase": "https://hacker-news.firebaseio.com/v0",
+    "topN": 12,
+    "topCommentsLimit": 12,
+    "topStoryIds": [
+      47460525,
+      47421749,
+      47419391,
+      47463547,
+      47460452,
+      47464818,
+      47466697,
+      47455138,
+      47435081,
+      47428544,
+      47467034,
+      47433755
+    ],
+    "fetchedAt": "2026-03-21T15:24:35.507Z"
+  },
+  "stories": [
+    {
+      "rank": 1,
+      "item": {
+        "by": "rbanffy",
+        "descendants": 487,
+        "id": 47460525,
+        "kids": [
+          47462013,
+          47463880,
+          47466438,
+          47467709,
+          47461304,
+          47467255,
+          47467769,
+          47460841,
+          47467413,
+          47461565,
+          47461834,
+          47461578,
+          47467602,
+          47462787,
+          47461462,
+          47461042,
+          47467434,
+          47465756,
+          47466591,
+          47463429,
+          47464570,
+          47465527,
+          47462955,
+          47463249,
+          47462243,
+          47465518,
+          47466572,
+          47465717,
+          47461326,
+          47465692,
+          47461008,
+          47462016,
+          47461613,
+          47464579,
+          47466153,
+          47463916,
+          47465661,
+          47466389,
+          47465643,
+          47463768,
+          47461348,
+          47461500,
+          47466111,
+          47463524,
+          47461597,
+          47463007,
+          47461707,
+          47462299,
+          47463198,
+          47461334,
+          47463470,
+          47462400,
+          47466620,
+          47461781,
+          47463814,
+          47461846,
+          47463743,
+          47463753,
+          47461314,
+          47465066,
+          47461212,
+          47461262,
+          47462465,
+          47461679,
+          47462066,
+          47461996,
+          47461475,
+          47464952,
+          47463483,
+          47461340,
+          47464766,
+          47461422,
+          47461944,
+          47464077,
+          47460967,
+          47461499,
+          47460886,
+          47464053,
+          47463497,
+          47463835,
+          47461213,
+          47462900,
+          47462424,
+          47467291,
+          47466635,
+          47466428,
+          47467299,
+          47466504,
+          47465098,
+          47463897,
+          47462908,
+          47463399,
+          47461888,
+          47463979,
+          47464604,
+          47461947,
+          47465404,
+          47462583,
+          47462289,
+          47461217,
+          47464486,
+          47462442,
+          47462612,
+          47463509,
+          47463915,
+          47463913,
+          47461418,
+          47461851,
+          47464715,
+          47461554,
+          47462117,
+          47462890
+        ],
+        "score": 1018,
+        "time": 1774040632,
+        "title": "OpenCode – Open source AI coding agent",
+        "type": "story",
+        "url": "https://opencode.ai/"
+      },
+      "comments": [
+        {
+          "id": 47462013,
+          "by": "logicprog",
+          "text": "OpenCode was the first open source agent I used, and my main workhorse after experimenting briefly with Claude Code and realizing the potential of agentic coding. Due to that, and because it&#x27;s a popular an open source alternative, I want to be able to recommend it and be enthusiastic about it. The problem for me is that the development practices of the people that are working on it are suboptimal at best; they&#x27;re constantly releasing at an extremely high cadence, where they don&#x27;t even spend the time to test or fix things (or even build a proper list of changes for each release), and they add, remove, refine, change, fix, and break features constantly at that accelerated pace.\nMore than that, it&#x27;s an extremely large and complex TypeScript code base — probably larger and more complex than it needs to be — and (partly as a result) it&#x27;s fairly resource inefficient (often uses 1GB of RAM or more. For a TUI).\nOn top of that, at least I personally find the TUI to be overbearing and a little bit buggy, and the agent to be so full of features that I don&#x27;t really need — also mildly buggy — that it sort of becomes hard to use and remember how everything is suppos…"
+        },
+        {
+          "id": 47463880,
+          "by": "heavyset_go",
+          "text": "By default OpenCode sends all of your prompts to Grok&#x27;s free tier to come up with chat summaries for the UI.\nTo change that, you need to set a custom &quot;small model&quot; in the settings."
+        },
+        {
+          "id": 47466438,
+          "by": "solarkraft",
+          "text": "I found out about OpenCode through the Anthropic feud. I now spend most of my AI time in it, both at work and at home. It turns out to be pretty great for general chat too, with the ability to easily integrate various tools you might need (search being the top one of course).\nI have things to criticize about it, their approach to security and pulling in code being my main one, but over all it’s the most complete solution I’ve found.\nThey have a server&#x2F;client architecture, a client SDK, a pretty good web UI and use pretty standard technologies.\nThe extensibility story is good and just seems like the right paradigms mostly, with agents, skills, plugins and providers.\nThey also ship very fast, both for good and bad, I’ve personally enjoyed the rapid improvements (~2 days from criticizing not being able to disable the default provider in the web ui to being able to).\nI think OpenCode has a pretty bright future and so far I think that my issues with it should be pretty fixable. The amount of tasteful choices they’ve made dwarfs the few untasteful ones for me so far."
+        },
+        {
+          "id": 47467709,
+          "by": "justacatbot",
+          "text": "The decision to build this as a TUI rather than a web app is interesting. Terminal-native tools tend to get out of the way and let you stay in flow -- curious how the context management works when you have a large codebase, do you chunk by file or do something smarter?"
+        },
+        {
+          "id": 47461304,
+          "by": "softwaredoug",
+          "text": "The team also is not breathlessly talking about how coding is dead. They have pretty sane takes on AI coding including trying to help people who care about code quality."
+        },
+        {
+          "id": 47467255,
+          "by": "jFriedensreich",
+          "text": "opencode stands out as one of the few agents with a proper client server architecture that allows something like openchambers great vscode extension so its possible to seamlessly switch between tui, vscode, webapp, desktop app. i think there is hardly a usable alternative for most coding agent usecases (assuming agents from model providers are a no go, they cannot be allowed to own the tools AND the models). But its also far from perfect: the webui is secretly served from their servers instead of locally for no reason. worse the fallback route gets also sent to their servers so any unknown request to opencode api ends up being sent to opencode servers potentially leaking data. the security defaults are horrific, its impossible to use it safely outside a controlled container. it will just serve your whole hard drive via rest endpoint and not constrain to project folders. the share feature uploading your conversations to their servers is also so weirdly communicated and implemented that it leaves a bad taste. I dont think this will become much better until the agent ecosystem is more modular and less monolith, acp, a2a and mcp need to become good enough so tools, prompts, skills, sub…"
+        },
+        {
+          "id": 47467769,
+          "by": "hacker_88",
+          "text": "Use it with zed"
+        },
+        {
+          "id": 47460841,
+          "by": "ramon156",
+          "text": "The Agent that is blacklisted from Anthropic AI, soon more to come.\nI really like how their subagents work, as a bonus I get to choose which model is in which agent. Sadly I have to resort to the mess that Anthropic calls Claude Code"
+        },
+        {
+          "id": 47467413,
+          "by": "sebastianconcpt",
+          "text": "OpenCode is the almost good IDE I need.\nWhat does well: helps context switching by using one window to control many repos with many worktrees each.\nWhat can do better?\nIt&#x27;s putting AI too much in control? What if I want to edit a function myself in the workspace I&#x27;m working on? or select a snippet and refer that in the promp? without that I feel it&#x27;s missing a non-negotiable feature."
+        },
+        {
+          "id": 47461565,
+          "by": "hippycruncher22",
+          "text": "I&#x27;m a <a href=\"https:&#x2F;&#x2F;pi.dev\" rel=\"nofollow\">https:&#x2F;&#x2F;pi.dev</a> man myself."
+        },
+        {
+          "id": 47461834,
+          "by": "planckscnst",
+          "text": "I love OpenCode! I wrote a plugin that adds two tools: prune and retrieve. Prune lets the LLM select messages to remove from the conversation and replace with a summary and key terms.  The retrieve tool lets it get those original messages back in case they&#x27;re needed. I&#x27;ve been livestreaming the development and using it on side projects to make sure it&#x27;s actually effective... And it turns out it really is! It feels like working with an infinite context window.\n<a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;live&#x2F;z0JYVTAqeQM?si=oLvyLlZiFLTxL7p0\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;live&#x2F;z0JYVTAqeQM?si=oLvyLlZiFLTxL7p0</a>"
+        },
+        {
+          "id": 47461578,
+          "by": "brendanmc6",
+          "text": "I’ve been extraordinarily productive with this, their $10 Go plan, and a rigorous spec-driven workflow. Haven’t touched Claude in 2 months.\nI sprinkle in some billed API usage to power my task-planner and reviewer subagents (both use GPT 5.4 now).\nThe ability to switch models is very useful and a great learning experience. GLM, Kimi and their free models surprised me. Not the best, not perfect, but still very productive. I would be a wary shareholder if I owned a stake in the frontier labs… that moat seems to be shrinking fast."
+        }
+      ],
+      "deepseek": {
+        "model": "deepseek-chat",
+        "generatedAt": "2026-03-21T15:21:25.249Z",
+        "titleZh": "OpenCode：开源 AI 编码助手",
+        "articleSummary": "OpenCode 是一款开源 AI 编码助手，支持在终端、IDE 或桌面环境中编写代码，提供 LSP 自动加载、多会话并行、会话链接分享等功能，并兼容 GitHub Copilot 和 ChatGPT Plus/Pro 账户。它通过 Models.dev 集成超过 75 个 LLM 提供商，包括本地模型，强调隐私优先，不存储用户代码或上下文数据。该项目拥有超过 12 万 GitHub 星标、800 名贡献者和每月 500 万开发者使用，还提供 Zen 服务以访问经过测试和基准验证的优化模型。",
+        "commentSummary": "评论中用户普遍认可 OpenCode 作为开源 AI 编码助手的实用性和潜力，特别是其客户端-服务器架构、多平台支持和模型切换功能。然而，批评集中在开发实践上，如频繁发布导致功能不稳定、代码库庞大且资源效率低、TUI 界面存在 bug 以及安全默认设置不佳，包括数据泄露风险和隐私问题。部分用户赞赏其快速迭代和扩展性，但也担忧其过于复杂和 AI 控制过强，缺乏手动编辑功能。整体上，讨论反映了对工具成熟度和安全性的关注。",
+        "articleBodyChars": 1478,
+        "error": null
+      }
+    },
+    {
+      "rank": 2,
+      "item": {
+        "by": "j0e1",
+        "descendants": 8,
+        "id": 47421749,
+        "kids": [
+          47466958,
+          47466977,
+          47467160,
+          47422702
+        ],
+        "score": 45,
+        "time": 1773810018,
+        "title": "Meta's Omnilingual MT for 1,600 Languages",
+        "type": "story",
+        "url": "https://ai.meta.com/research/publications/omnilingual-mt-machine-translation-for-1600-languages/?_fb_noscript=1"
+      },
+      "comments": [
+        {
+          "id": 47466958,
+          "by": "stingraycharles",
+          "text": "I find that meta’s translations are very poor compared to others, at least for relatively obscure languages, which I figured was relevant considering the article.\nGoogle Translate is a good default, but LLMs are really good at translations, as they’re better capable at understanding context and providing culturally appropriate translations.\n(I live in Cambodia where they speak Khmer)"
+        },
+        {
+          "id": 47466977,
+          "by": "psychoslave",
+          "text": "That&#x27;s a high count, but still a bit away from &quot;Omni&quot;. Usual count is between 4k and 8k depending the source. But the first 1k might be the hardest, certainly."
+        },
+        {
+          "id": 47467160,
+          "by": "croes",
+          "text": "Off topic, since the AI craze MS‘ documentation translation has ridiculous errors like translating try catch keywords to &quot;versuchen&quot; and &quot;fangen&quot; for German pages"
+        }
+      ],
+      "deepseek": {
+        "model": "deepseek-chat",
+        "generatedAt": "2026-03-21T15:21:54.367Z",
+        "titleZh": "Meta发布支持1600种语言的Omnilingual机器翻译系统",
+        "articleSummary": "材料中未提供外链正文，依据有限信息归纳：Meta公司发布了一项名为Omnilingual的机器翻译技术，声称能够支持多达1600种语言，旨在扩展机器翻译的覆盖范围，可能涉及多语言模型的研究进展。",
+        "commentSummary": "评论中用户对Meta翻译质量提出质疑，认为其在冷门语言上表现较差，相比之下Google Translate更可靠，而大型语言模型因理解上下文和文化背景可能更优；另有评论指出1600种语言距离“全语言”目标仍有差距，因为全球语言总数通常在4000到8000种之间，但实现前1000种可能最具挑战性；还有用户提及AI热潮导致微软文档翻译出现荒谬错误，如将编程关键词误译。",
+        "articleBodyChars": 0,
+        "error": null
+      }
+    },
+    {
+      "rank": 3,
+      "item": {
+        "by": "matt_d",
+        "descendants": 41,
+        "id": 47419391,
+        "kids": [
+          47466839,
+          47464472,
+          47465594,
+          47467284,
+          47466637,
+          47464418
+        ],
+        "score": 209,
+        "time": 1773787512,
+        "title": "Mamba-3",
+        "type": "story",
+        "url": "https://www.together.ai/blog/mamba-3"
+      },
+      "comments": [
+        {
+          "id": 47466839,
+          "by": "Havoc",
+          "text": "Is there a reason we don’t switch halfway through? ie start with a classic LLM and switch to something linear like mamba as context grows"
+        },
+        {
+          "id": 47464472,
+          "by": "nl",
+          "text": "I&#x27;m looking forward to comparing this to Inception 2 (the text diffusion model) which in my experience is very fast and reasonably high quality."
+        },
+        {
+          "id": 47465594,
+          "by": "jychang",
+          "text": "I&#x27;m not sure that I buy their conclusion that more compute during inference is good.\nYes, batch=1 inference is mostly memory bandwidth bound, not GPU compute bound. But no provider does batch=1 inference. Everyone groups all the requests into a batch, and the GPU computes them together.\nWith a fused kernel, that means the GPU streams the tensors from VRAM, and does a bunch of compute on different conversations in the batch, at the same time.\nIf they increase the amount of compute required per token, that just reduces the maximum batch size a GPU can handle. In practice, yes this does mean each GPU can serve less users. Providers aren&#x27;t leaving GPU cores idle normally during inference."
+        },
+        {
+          "id": 47464418,
+          "by": "robofanatic",
+          "text": "&gt; Mamba-3 is a new state space model (SSM) designed with inference efficiency as the primary goal — a departure from Mamba-2, which optimized for training speed. The key upgrades are a more expressive recurrence formula, complex-valued state tracking, and a MIMO (multi-input, multi-output) variant that boosts accuracy without slowing down decoding.\nWhy can’t they simply say -\nMamba-3 focuses on being faster and more efficient when making predictions, rather than just being fast to train like Mamba-2."
+        }
+      ],
+      "deepseek": {
+        "model": "deepseek-chat",
+        "generatedAt": "2026-03-21T15:22:08.077Z",
+        "titleZh": "Mamba-3：以推理效率为核心的新状态空间模型",
+        "articleSummary": "Mamba-3是一种新型状态空间模型，主要目标为提升推理效率，与专注于训练速度的Mamba-2不同。其关键改进包括更富表达力的递推公式、复数状态跟踪以及多输入多输出变体，这些升级在保持解码延迟不变的同时提高了准确性。在1.5B规模上，Mamba-3 SISO在预填充和解码延迟方面超越了Mamba-2、Gated DeltaNet甚至Llama-3.2-1B。模型还开源了内核，结合Triton、TileLang和CuTe DSL以优化硬件性能。文章强调，随着后训练和部署需求增长，推理效率变得至关重…",
+        "commentSummary": "评论中讨论了Mamba-3的推理效率设计是否合理，有观点质疑增加每令牌计算量可能降低GPU的批量处理能力，从而影响实际部署中的用户服务量。另有评论建议在上下文增长时从传统LLM切换到线性模型如Mamba以优化性能，并期待与Inception 2等快速模型进行比较。还有评论指出文章表述可更简洁，直接强调Mamba-3在预测时的速度和效率提升。整体上，评论关注技术细节、实际应用影响和模型对比。",
+        "articleBodyChars": 12001,
+        "error": null
+      }
+    },
+    {
+      "rank": 4,
+      "item": {
+        "by": "vinhnx",
+        "descendants": 5,
+        "id": 47463547,
+        "kids": [
+          47465302,
+          47466455,
+          47467089
+        ],
+        "score": 151,
+        "time": 1774061233,
+        "title": "FFmpeg 101 (2024)",
+        "type": "story",
+        "url": "https://blogs.igalia.com/llepage/ffmpeg-101/"
+      },
+      "comments": [
+        {
+          "id": 47465302,
+          "by": "do_anh_tu",
+          "text": "For anyone looking to dive deeper and actually understand how FFmpeg and libav work under the hood, I highly recommend Leandro Moreira&#x27;s tutorial [0]. For me, it&#x27;s hands down the best and most comprehensive explanation out there.\n[0] <a href=\"https:&#x2F;&#x2F;github.com&#x2F;leandromoreira&#x2F;ffmpeg-libav-tutorial\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;leandromoreira&#x2F;ffmpeg-libav-tutorial</a>"
+        },
+        {
+          "id": 47466455,
+          "by": "nasso_dev",
+          "text": "wow we&#x27;re at ffmpeg 101 already? ffmpeg 8 felt like yesterday"
+        },
+        {
+          "id": 47467089,
+          "by": "analog8374",
+          "text": "ffmpeg is a superpower. I use it for assembling all the video bits into something playable"
+        }
+      ],
+      "deepseek": {
+        "model": "deepseek-chat",
+        "generatedAt": "2026-03-21T15:22:20.745Z",
+        "titleZh": "FFmpeg 入门指南（2024版）",
+        "articleSummary": "文章提供了FFmpeg的高层架构概览，旨在帮助初学者入门。它详细介绍了FFmpeg的组成，包括命令行工具（如ffmpeg、ffplay、ffprobe）和核心库（如libavformat、libavcodec、libavfilter），并解释了它们在多媒体处理中的功能。文章通过代码示例展示了如何使用FFmpeg库来解复用、解码多媒体流，包括AVFormatContext、AVStream、AVCodec、AVPacket和AVFrame等关键结构的使用方法，并提供了一个简单播放器的实现步骤，从打…",
+        "commentSummary": "评论区讨论焦点集中在FFmpeg的学习资源和其强大功能上。有用户推荐了Leandro Moreira的FFmpeg教程，认为这是最全面和深入的解释，适合想深入了解FFmpeg底层工作原理的人。另一用户感叹FFmpeg版本更新迅速，从FFmpeg 8到101感觉很快。还有用户称赞FFmpeg是“超能力”工具，常用于组装视频片段使其可播放，体现了对FFmpeg实用性的积极态度。",
+        "articleBodyChars": 11545,
+        "error": null
+      }
+    },
+    {
+      "rank": 5,
+      "item": {
+        "by": "cainxinth",
+        "descendants": 279,
+        "id": 47460452,
+        "kids": [
+          47460779,
+          47463530,
+          47463905,
+          47461243,
+          47466106,
+          47461323,
+          47463956,
+          47461573,
+          47460885,
+          47461121,
+          47466665,
+          47460799,
+          47465719,
+          47465673,
+          47461355,
+          47464793,
+          47467058,
+          47465558,
+          47464056,
+          47466135,
+          47463728,
+          47465833,
+          47464450,
+          47460920,
+          47463792,
+          47465219,
+          47460964,
+          47464695,
+          47465806,
+          47461926,
+          47465928,
+          47460948,
+          47461800,
+          47462659,
+          47465971,
+          47463859,
+          47464459,
+          47463474,
+          47463525,
+          47461263,
+          47461200,
+          47461487,
+          47464930,
+          47460768,
+          47465392,
+          47462683,
+          47461502,
+          47460974,
+          47463111,
+          47467666,
+          47460745,
+          47464463
+        ],
+        "score": 364,
+        "time": 1774040097,
+        "title": "A Japanese glossary of chopsticks faux pas (2022)",
+        "type": "story",
+        "url": "https://www.nippon.com/en/japan-data/h01362/"
+      },
+      "comments": [
+        {
+          "id": 47460779,
+          "by": "cthalupa",
+          "text": "Interesting. Some of these are big deals (particularly the ones mentioned as important) but others I have seen Japanese people in Tokyo do quite consistently. Soroebashi - not on the table, but I&#x27;ve seen chopsticks aligned by pushing them against the plate hundreds of time. I&#x27;ve also seen them used to stir miso soup, etc. plenty.\nOthers I don&#x27;t know that I would have much of an inclination to do and haven&#x27;t seen but am not sure if it&#x27;s because it really is a faux pas or just because no one else really tends to do it either."
+        },
+        {
+          "id": 47463530,
+          "by": "fumeux_fume",
+          "text": "My heart is lightened to learn inserting the chopsticks into your mouth to make walrus fangs is not taboo."
+        },
+        {
+          "id": 47463905,
+          "by": "vunderba",
+          "text": "When I first moved to Taiwan and was just getting a handle on Chinese, I asked a waiter &quot;請給我一個筷子&quot; - not yet being familiar with proper measure words.\nThe waiter (who had a bit of a sense of humor) brought me exactly ONE chopstick. I laughed and repeated 請給我另一個筷子 (Please give me another chopstick) and he brought out another one.\nOf course later my friend told me that I should have used 雙 to indicate I wanted a &quot;pair&quot; of chopsticks."
+        },
+        {
+          "id": 47461243,
+          "by": "AftHurrahWinch",
+          "text": "Phew, I&#x27;m glad &quot;inserting them into your nostrils and braying like a walrus&quot; isn&#x27;t on the list."
+        },
+        {
+          "id": 47466106,
+          "by": "mark_l_watson",
+          "text": "Fairly much common sense advice, with some cultural taboos like resting chopsticks pointing to the right.\nI have always been a little embarrassed by my own use of chopsticks. When I was three or four years old a waitress in a Chinese restaurant helped me figure out a way to hold them that worked for me. Long story short, I am in my 70s and I have very effectively been getting food efficiently into my mouth with chopsticks my whole life - with horrible style."
+        },
+        {
+          "id": 47461323,
+          "by": "unsignedint",
+          "text": "The article does a good job calling out the more serious offenses, although I’d personally argue that nigiribashi is just as bad as the other two. Most Japanese people would probably react with a bit of shock to those.\nThat said, chopstick etiquette is definitely evolving. Something like chobujubashi isn’t enforced as strictly anymore, especially with more awareness around left-handed users. Kaeshibashi, on the other hand, is becoming more common, and in some social circles, not doing it can actually come across as rude."
+        },
+        {
+          "id": 47463956,
+          "by": "rendaw",
+          "text": "Hashibashi - does this mean it&#x27;s okay to place the chopsticks across the top if it&#x27;s not to show you&#x27;re finished? I heard that was okay as long as you align them not to point at another person (not across the table). If there&#x27;s no chopstick rest I&#x27;m not sure where else you&#x27;re supposed to put your chopsticks.\nAlso I&#x27;m not sure how you&#x27;re supposed to eat e.g. fried rice without yokobashi or kakibashi.\nAlso! I thought kaeshibashi was a good thing. I&#x27;ve definitely seen people do that at parties."
+        },
+        {
+          "id": 47461573,
+          "by": "mijoharas",
+          "text": "For anyone else curious after reading &quot;-bashi&quot; 40 times:\n(Not gonna direct quote because the damn site doesn&#x27;t allow copy-pasting so they don&#x27;t get a link, paraphrased):\nKirai-bashi would be literally translated to &quot;dislike-chopsticks&quot; and means bad chopstick table-manners. Hashi is chopsticks and bashi is the voiced form of it.\nSo the bashi suffix&#x2F;word on the end of all of these just means chopsticks it seems."
+        },
+        {
+          "id": 47460885,
+          "by": "mjamesaustin",
+          "text": "I was shocked to find it&#x27;s a faux pas to rub disposable chopsticks to remove potential splinters. I was taught this is what you&#x27;re supposed to do with disposable chopsticks."
+        },
+        {
+          "id": 47461121,
+          "by": "frereubu",
+          "text": "&gt;  こじ箸 Kojibashi (also known as ほじり箸 hojiribashi)\n&gt; To use the chopsticks to pick something out from near the bottom of the dish.\nI think there must be some bits that are lost in translation for some of these. This makes it sound like you can&#x27;t eat all of the food in a bowl with your chopsticks."
+        },
+        {
+          "id": 47466665,
+          "by": "bagacrap",
+          "text": "Does it bother anyone else when people use their teeth to scrape food off a metal utensil (rather than lips, or teeth to food)? I wish English had a specific word for that affront."
+        },
+        {
+          "id": 47460799,
+          "by": "emursebrian",
+          "text": "Most of these are common sense. As a tourist foreigner, you also aren&#x27;t expected to know all the customs but it&#x27;s appreciated when you try.  The one about which direction to NOT point the chopsticks in was new to me. If you just watch what other people are doing, then try to do the same thing, you&#x27;re probably on the right track.\nRelated to eating, one pro-tip I got from a local is that when you&#x27;re ready to close your tab or get your check at a bar or restaurant, you can make a small X with your index fingers.\nReally useful in a busy bar!"
+        }
+      ],
+      "deepseek": {
+        "model": "deepseek-chat",
+        "generatedAt": "2026-03-21T15:22:34.260Z",
+        "titleZh": "日本筷子使用禁忌指南（2022）",
+        "articleSummary": "文章详细列举了在日本用餐时应避免的筷子使用不当行为，统称为“嫌い箸”，涵盖从一般失礼到严重禁忌的多种情况。例如，将筷子竖插在米饭中（立て箸）是重大禁忌，因类似佛教葬礼供品；用筷子传递食物（合わせ箸）也因与火葬后拾骨习俗相关而被视为不敬。其他行为包括咬筷子（かみ箸）、用筷子指人（指し箸）、在汤中清洗筷子（洗い箸）等，均被视为违反餐桌礼仪。文章以日语音节顺序排列，并标注了严重程度，旨在帮助读者了解日本文化中的用餐规范。",
+        "commentSummary": "评论中，用户们对文章内容进行了讨论，普遍认为其中一些禁忌（如竖插筷子）确实重要，但其他行为（如对齐筷子或搅拌味噌汤）在日本东京也常见，显示礼仪在演变。部分用户分享个人经历，如因量词使用错误只拿到一根筷子，或对某些行为（如摩擦一次性筷子去除木刺）是否真为禁忌表示惊讶。讨论还涉及文化差异，例如返し箸（翻转筷子夹菜）在某些社交圈中变得普遍，而左撇子用户可能影响规则执行。整体上，评论者认为多数建议是常识，外国游客不必全知，但尝试遵守会受赞赏，并提供了其他用餐小贴士。",
+        "articleBodyChars": 5196,
+        "error": null
+      }
+    },
+    {
+      "rank": 6,
+      "item": {
+        "by": "pabs3",
+        "descendants": 68,
+        "id": 47464818,
+        "kids": [
+          47466893,
+          47467166,
+          47466547,
+          47466245,
+          47466890,
+          47466088,
+          47465860,
+          47466959,
+          47466762,
+          47467388,
+          47466643,
+          47466082
+        ],
+        "score": 250,
+        "time": 1774078216,
+        "title": "Blocking Internet Archive Won't Stop AI, but Will Erase Web's Historical Record",
+        "type": "story",
+        "url": "https://www.eff.org/deeplinks/2026/03/blocking-internet-archive-wont-stop-ai-it-will-erase-webs-historical-record"
+      },
+      "comments": [
+        {
+          "id": 47466893,
+          "by": "VladVladikoff",
+          "text": "As a site operator who has been battling with the influx of extremely aggressive AI crawlers, I’m now wondering if my tactics have accidentally blocked internet archive. I am totally ok with them scraping my site, they would likely obey robots.txt, but these days even Facebook ignores it, and exceeds my stipulated crawl delay by distributing their traffic across many IPs. (I even have a special nginx rule just for Facebook.)\nBlocking certain JA3 hashes has so far been the most effective counter measures. However I wish there was an nginx wrapper around hugin-net that could help me do TCP fingerprinting as well. As I do not know rust and feel terrified of asking an LLM to make it. There is also a race condition issue with that approach, as it is passive fingerprinting even the JA4 hashes won’t be available for the first connection, and the AI crawlers I’ve seen do one request per IP so you don’t get a chance to block the second request (never happens)."
+        },
+        {
+          "id": 47467166,
+          "by": "catapart",
+          "text": "I&#x27;m seeing a lot of comments about how we maintain the status quo, but I&#x27;m very interested in hearing from anyone who has conceded that there is no way to stop AI scrapers at this point and what that means for how we maintain public information on the internet in the future.\nI don&#x27;t necessarily believe that we won&#x27;t find some half-successful solution that will allow server hosting to be done as it currently is, but I&#x27;m not very sure that I&#x27;ll want to participate in whatever schemes come about from it, so I&#x27;m thinking more about how I can avoid those schemes rather than insisting that they won&#x27;t exist&#x2F;work.\nThe prevailing thought is that if it&#x27;s not possible now, it won&#x27;t be long before a human browser will be indistinguishable from an LLM agent. They can start a GUI session, open a browser, navigate to your page, snapshot from the OS level and backwork your content from the snapshot, or use the browser dev tools or whatever to scrape your page that way. And yes, that would be much slower and more inefficient than what they currently do, but they would only need to do that for those that keep on the bleeding edge of security fro…"
+        },
+        {
+          "id": 47466547,
+          "by": "tossandthrow",
+          "text": "I think media outlets think way too highly of their contribution to AI.\nHad they never existed, it had likely not made a dent to the AI development - completely like believing that had they been twice as productive, it had likely neither made a dent to the quality of LLMs."
+        },
+        {
+          "id": 47466245,
+          "by": "gzread",
+          "text": "This is why archive.is was created. Should we stop trying to hunt down and punish its creator and support it as the extremely useful project that it is?"
+        },
+        {
+          "id": 47466890,
+          "by": "stuaxo",
+          "text": "The New York Times is awful I want it to be archived so people can see that in the future."
+        },
+        {
+          "id": 47466088,
+          "by": "user_7832",
+          "text": "&gt; But in recent months The New York Times began blocking the Archive from crawling its website, using technical measures that go beyond the web’s traditional robots.txt rules. That risks cutting off a record that historians and journalists have relied on for decades. Other newspapers, including The Guardian, seem to be following suit.\nI&#x27;m a bit surprised I never read about this till now, though while disappointing it is unfortunately not surprising.\n&gt; The Times says the move is driven by concerns about AI companies scraping news content. Publishers seek control over how their work is used, and several—including the Times—are now suing AI companies over whether training models on copyrighted material violates the law. There’s a strong case that such training is fair use.\nI suspect part of it might be these corps not wanting people to skip a paywall (whether or not someone would pay even if they had no access is a different story). But this argument makes no sense for the Guardian."
+        },
+        {
+          "id": 47465860,
+          "by": "xnx",
+          "text": "Does Internet Archive have a distributed residential IP crawler program? I would enthusiastically contribute to that.\nThere must be some mechanism to prevent tampering in such a setup."
+        },
+        {
+          "id": 47466959,
+          "by": "b1n",
+          "text": "Archive now, make public after X amount of time. So, maybe both publisher and archiver are happy (or less sad)."
+        },
+        {
+          "id": 47466762,
+          "by": "Havoc",
+          "text": "As someone perpetually online it’s also making me rethink that a bit\nUnless you love walled gardens, doomscrolling and endless AI slop that seems like the fun is over"
+        },
+        {
+          "id": 47466082,
+          "by": "SlinkyOnStairs",
+          "text": "Devil&#x27;s advocate: Anyone seeking to limit AI scraping doesn&#x27;t have much of a choice in also blocking archivists.\nAnd it&#x27;s genuinely not that weird for news organisations to want to stop AI scraping. This is just a repeat of their fight with social media embedding.\nSure. The back catalogue should be as close to public domain as possible, libraries keeping those records is incredibly important for research.\nBut with current news, that becomes complicated as taking the articles and not paying the subscription (or viewing their ads) directly takes away the revenue streams that newsrooms rely on to produce the news. Hence the &quot;Newspaper trying to ban linking&quot; mess, which was never about the links themselves but about social media sites embedding the headline and a snippet, which in turn made all the users stop clicking through and &quot;paying&quot; for the article.\nSocial media relies on those newsrooms (same with really, most other kinds of websites) to provide a lot of their content. And AI relies on them for all of the training data (remember: &quot;Synthetic data&quot; does not appear ex nihilo) &amp; to provide the news that the AI users request. We can&#x…"
+        }
+      ],
+      "deepseek": {
+        "model": "deepseek-chat",
+        "generatedAt": "2026-03-21T15:22:47.720Z",
+        "titleZh": "封锁互联网档案馆无法阻止AI，却会抹除网络历史记录",
+        "articleSummary": "文章指出，近期《纽约时报》等主要新闻出版商开始使用超越传统robots.txt的技术手段，阻止互联网档案馆爬取其网站，以应对AI公司抓取新闻内容的担忧。互联网档案馆作为全球最大的数字图书馆，通过Wayback Machine保存了超过一万亿个网页，为历史学家、记者和公众提供了不可替代的网络历史记录。出版商此举虽旨在控制内容使用并起诉AI公司，但可能无意中摧毁数十年的历史文档，因为档案馆并非商业AI系统，而是致力于保存公共历史。文章强调，网络存档和搜索在法律上属于合理使用，类似于谷歌图书案例，应受…",
+        "commentSummary": "评论中，用户们讨论了技术对抗AI爬虫的挑战，如使用JA3哈希或TCP指纹识别，但指出这些方法可能误伤互联网档案馆等合法爬虫。部分人质疑新闻媒体对AI发展的实际贡献，认为其内容并非不可或缺。还有人建议支持替代存档项目如archive.is，或探讨分布式爬虫方案以增强存档能力。此外，评论涉及新闻机构封锁存档的动机，包括绕过付费墙和收入流失问题，并反思当前网络环境可能走向封闭花园化。整体上，评论呈现了对存档重要性的认可，以及对技术限制和未来信息保存方式的担忧。",
+        "articleBodyChars": 3878,
+        "error": null
+      }
+    },
+    {
+      "rank": 7,
+      "item": {
+        "by": "heresie-dabord",
+        "descendants": 126,
+        "id": 47466697,
+        "kids": [
+          47467802,
+          47467003,
+          47467197,
+          47467334,
+          47467712,
+          47467520,
+          47467489,
+          47467195,
+          47467296,
+          47467263,
+          47467023,
+          47467017,
+          47467208,
+          47467326,
+          47467211,
+          47467136
+        ],
+        "score": 128,
+        "time": 1774098730,
+        "title": "Mayor of Paris removed parking spaces, \"drastically\" reduced the number of cars",
+        "type": "story",
+        "url": "https://www.cnn.com/2026/03/21/travel/paris-transformation-anne-hidalgo-mayor"
+      },
+      "comments": [
+        {
+          "id": 47467802,
+          "by": "black_puppydog",
+          "text": "People keep saying Hidalgo&#x27;s policies made people angry, but then voter turnout when she actually asks for confirmation of her policies is low. For example, 2024&#x27;s vote on whether to triple the parking fees for big SUVs. [1]\nTurnout was tiny, but the measure passed.\nWell what does that mean? It certainly doesn&#x27;t mean that there is a huge wave of enthusiasm for the measure.\nBut conversely it also means there&#x27;s not a huge wave of anger about it. It&#x27;s not like the automotive lobby didn&#x27;t try hard to create one; the media coverage was actually kind of crazy at the time. And with the low turnout, even a small mobilization would have been sufficient to reject this measure. But it didn&#x27;t materialise. So when I read articles like this one from CNN, I just have to ask myself what the agenda is behind jazzing this up as much.\n[1]: <a href=\"https:&#x2F;&#x2F;www.lerevenu.com&#x2F;reduire-impots&#x2F;conseils-impots&#x2F;paris-la-tarification-du-stationnement-speciale-suv-approuvee-a-pres-de-55&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.lerevenu.com&#x2F;reduire-impots&#x2F;conseils-impots&#x2F;pari...</a>"
+        },
+        {
+          "id": 47467003,
+          "by": "hshdhdhj4444",
+          "text": "This article has such a weird framing.\nIt keeps repeating how the cleaner air is so good for tourists.\nBut tourists visiting Paris for a week don’t get the majority of the benefit from cleaner air.\nThe Parisian residents living there throughout the year do.\nMaybe because it’s CNN, an American outlet, they’re focused on the “tourist”, but these benefits have mostly accrued to Parisians.\nAlso, the 4% increase in traffic jams is minuscule when compared to other large cities across the world (outside of maybe NYC, since it implemented congestion pricing over that period). Paris has not escaped the wrath of the SUV, and a large part of the congestion cities across the world are seeing is solely down to cars becoming bigger."
+        },
+        {
+          "id": 47467197,
+          "by": "goldenarm",
+          "text": "I moved from LA to Paris, my mental and physical health improved dramatically.\nI don&#x27;t even take the subway, walking and biking are enough where I live. Hopefully we can reach the comfort of dutch cities within a decade."
+        },
+        {
+          "id": 47467334,
+          "by": "youknownothing",
+          "text": "There is some clear bias and green agenda in the way this has been written, which to be fair it&#x27;s very common in Europe. As the EU continues its course to ban the sale of ICE cars by 2035, the argument of &quot;fewer cars make for cleaner air&quot; is gradually losing weight. As more and more EVs hit the streets, the argument against cars is more ideological, about lifestyle. It&#x27;s about collectivism, about giving up individual transport in favour of public alternatives. It&#x27;s happened in London, where a clear anti-car agenda is being disguised as a pro-clean air agenda. Almost the entire city now has a 20 mph speed limit &quot;to reduce emissions&quot; but, if that was the truly the objective, then I should be able to drive faster with an EV.\nOr maybe the angle they&#x27;re trying to go for is another very European problem: cities are no longer designed for the people who live there, but for the people who visit them. Barcelona in particular has become a theme park, Venice has been one for decades. Entire neighbourhoods looks their soul so we can have more Airbnbs and drunk tourists. Sad times."
+        },
+        {
+          "id": 47467712,
+          "by": "mrb",
+          "text": "I live in Paris and bike nearly every day, with my electric bike, or sometimes the city&#x27;s velib rental bikes, sometimes private rental bikes (Uber, Dott, Voi). I love the drastic push to add more bike lanes, and reduce car lanes. I don&#x27;t own a car in this city. Don&#x27;t need one."
+        },
+        {
+          "id": 47467520,
+          "by": "Tade0",
+          "text": "&gt; “She is constantly criticized, but still reelected: I’ve never understood it,” says Lionel Pradal, a bistro owner on the bustling Rue des Martyrs. “Parisians never go out and vote, and then after they complain. This is the problem with French people, it’s always the same.”\nThis is somewhat of a public secret, but few people ever stay in Paris for longer than say 10 years and thus aren&#x27;t that attached to the city. It&#x27;s noticeable in how few people voted in Hidalgo&#x27;s referendums.\nThe city has been losing citizens in favour of its suburbs for close to two decades now (if not much longer really) and this is a trend which shows no clear signs of reversing."
+        },
+        {
+          "id": 47467489,
+          "by": "rapht",
+          "text": "This article omits so many negatives from the &quot;cyclist&#x27;s paradise&quot; vision of Hidalgo&#x27;s 2 terms that I don&#x27;t know where to start. Families are the first casualties: the Paris metro is nowhere near accessible to strollers except if you are willing to go to the chiropractor after each week end, and using your car - hell, even parking your family car - is a no go as soon as there is some kind of hipster sports event or just as soon as you are after 10am on week end mornings. Local parks and generally streets are so dirty that you have to wash your children from head to toe as soon as they have set foot outside. And I&#x27;m not even talking about used seringes and broken glass in certain parts of the city. I&#x27;m actually so ashamed of my city at this point."
+        },
+        {
+          "id": 47467195,
+          "by": "consumer451",
+          "text": "Complete tangent, but I met my equally nerdy brother in Paris last month.\nIt was my first time, and his fourth. We stayed by the Republique metro station.\nAfter the literal 30th indie Manga [0] shop that we walked by, I asked him: &quot;how are all these shops financially feasible?&quot; He said: &quot;look inside.&quot;\nHoly crap, they all had customers inside! I had no idea that Japanese culture has such a strong presence in the heart of Paris, in the middle of Europe.\n[0] I should be clear, this was not just Manga. There were so many cool indie retro video game shops that it blew my little mind."
+        },
+        {
+          "id": 47467296,
+          "by": "chiefalchemist",
+          "text": "Slightly off-topic but NYC went through a similar process when congestion pricing met legal battle after legal battle. Long to short, there was a calculated effort to make midtown less and less vehicle-friendly. The &quot;hack&quot; was to take streets &#x2F; aves and repurpose those for pedestrians. Special walking lanes, more &quot;park cafes&quot;, bike lanes, etc. None were stated as being anti-vehicle - as that would open up legal challenges - but that was obviously the intention."
+        },
+        {
+          "id": 47467263,
+          "by": "LaGrange",
+          "text": "&quot;There was a rise in hospitalizations of pedestrians and cyclists&quot;\nlooks at the reason\nCARS."
+        }
+      ],
+      "deepseek": {
+        "model": "deepseek-chat",
+        "generatedAt": "2026-03-21T15:23:08.776Z",
+        "titleZh": "巴黎市长减少停车位，大幅降低汽车数量",
+        "articleSummary": "由于外链正文未能抓取，文章摘要基于标题与评论材料归纳。标题指出巴黎市长通过移除停车位等措施显著减少了汽车数量，评论中提及政策包括提高SUV停车费、增加自行车道等，旨在改善空气质量和促进可持续交通，但文章可能带有偏见或夸大争议。",
+        "commentSummary": "评论区讨论焦点集中在巴黎市长政策的实际影响与媒体报道的偏见。支持者赞扬政策改善了空气质量、促进了步行和骑行，提升了居民健康；反对者批评政策忽视了家庭需求、导致交通不便和城市脏乱，并质疑媒体将清洁空气利益过度聚焦于游客而非居民。此外，评论还涉及低投票率反映的公众冷漠、政策背后的意识形态之争（如反汽车议程），以及与其他城市如纽约的比较。",
+        "articleBodyChars": 0,
+        "error": null
+      }
+    },
+    {
+      "rank": 8,
+      "item": {
+        "by": "surprisetalk",
+        "descendants": 67,
+        "id": 47455138,
+        "kids": [
+          47464286,
+          47464494,
+          47464191,
+          47465521,
+          47463891,
+          47466060,
+          47464643,
+          47465645,
+          47467062,
+          47465907,
+          47463638,
+          47467592,
+          47464292,
+          47463681,
+          47465137,
+          47464192,
+          47464331,
+          47463745,
+          47463812,
+          47465395,
+          47464243,
+          47466535,
+          47466119,
+          47465413,
+          47463925
+        ],
+        "score": 154,
+        "text": "<a href=\"https:&#x2F;&#x2F;en.wiktionary.org&#x2F;wiki&#x2F;molly-guard\" rel=\"nofollow\">https:&#x2F;&#x2F;en.wiktionary.org&#x2F;wiki&#x2F;molly-guard</a>",
+        "time": 1774017221,
+        "title": "Molly Guard",
+        "type": "story",
+        "url": "https://bookofjoe2.blogspot.com/2026/02/molly-guard.html"
+      },
+      "comments": [
+        {
+          "id": 47464286,
+          "by": "0xbadcafebee",
+          "text": "In DevOps (and Lean, TPS) the more advanced form of this is the Poka-Yoke (<a href=\"https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Poka-yoke\" rel=\"nofollow\">https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Poka-yoke</a>). Poka-yokes don&#x27;t just add safety, they also guide the human away from making a mistake.\nThe canonical example is the automatic shift knob in a car. The shift knob is designed to 1) prevent you from accidentally shifting all the way back into reverse without pressing the shift button, and 2) prevents you from leaving park or neutral without depressing the brake pedal. This way you don&#x27;t damage the drivetrain or accidentally cause the car to roll forward&#x2F;backward.\nPoka-yoke is a form of defensive design (<a href=\"https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Defensive_design\" rel=\"nofollow\">https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Defensive_design</a>). For a beautiful example of defensive design, see the average electric kettle. If water boils over the top it won&#x27;t short the device, if it boils dry it&#x27;ll stop operating, the handle and body are plastic to prevent burning yourself, the handle is ergonomic to make carrying 1.5…"
+        },
+        {
+          "id": 47464494,
+          "by": "davidshepherd7",
+          "text": "That page is copied verbatim from <a href=\"https:&#x2F;&#x2F;unsung.aresluna.org&#x2F;molly-guard-in-reverse&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;unsung.aresluna.org&#x2F;molly-guard-in-reverse&#x2F;</a> (which is linked at the top). The original page also has much better formatting."
+        },
+        {
+          "id": 47464191,
+          "by": "JoshTriplett",
+          "text": "There&#x27;s a great piece of software called &quot;molly-guard&quot;, which intercepts calls to &quot;poweroff&quot; and &quot;reboot&quot; and similar. It checks if it&#x27;s being invoked via an SSH session, and if so, it asks you to type the name of the system you&#x27;re shutting down. That way, you never accidentally shut down a remote server when you meant to shut down your own system (or a different server)."
+        },
+        {
+          "id": 47465521,
+          "by": "RadiozRadioz",
+          "text": "&gt; There is no worse feeling for a programmer than waking up, walking up to the machine that was supposed to work through the night, and seeing it did absolutely nothing, stupidly waiting for hours for a response to a question that didn&#x27;t even matter.\nNo, there&#x27;s one worse feeling. Walking up to the machine that was supposed to work throughout the night, and seeing it had a surprise update that rebooted the system.\nOne of my favorite things about ditching Windows."
+        },
+        {
+          "id": 47463891,
+          "by": "evanjrowley",
+          "text": "I&#x27;m reminded of this legendary HN comment: <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=16530398\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=16530398</a>"
+        },
+        {
+          "id": 47466060,
+          "by": "canucker2016",
+          "text": "Samsung learned about molly guards the hard way - recall of millions of products after accidental fires from people&#x2F;pets activating the front-panel dials.\nsee <a href=\"https:&#x2F;&#x2F;arstechnica.com&#x2F;tech-policy&#x2F;2024&#x2F;08&#x2F;samsung-recalls-1-1m-electric-stoves-after-fires-caused-injuries-killed-pets&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;arstechnica.com&#x2F;tech-policy&#x2F;2024&#x2F;08&#x2F;samsung-recalls-...</a>\n  Luckily, there’s an easy solution recently devised that can prevent this safety hazard in homes across America, Samsung said. Customers concerned about unintentional activations can request free knob locks and covers that Samsung confirmed made it much harder to accidentally turn on the stove.\n\n  During the meeting, the CPSC shared data showing that across 338 incidents between January 1, 2018, and May 30, 2024, stoves from “ten specific manufacturers” were involved in fires causing 31 injuries and two deaths. Additionally, the CPSC had recorded “two other fatal incidents where a range was accidentally turned on when a knob was bumped, but the manufacturer is unknown.”\n\n  ...Companies said the CPSC data would help them “fully understand the iss…"
+        },
+        {
+          "id": 47464643,
+          "by": "wibbily",
+          "text": "Fun: the “Molly” in question is Ed Krol’s daughter - he’s the guy who wrote the Whole Internet User’s Guide and Catalog.\n<a href=\"https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Ed_Krol\" rel=\"nofollow\">https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Ed_Krol</a>"
+        },
+        {
+          "id": 47465645,
+          "by": "clbrmbr",
+          "text": "I once was a communications contractor for the major NJ power utility. One of their long time field techs (let’s just refer to him as Mr. T) was giving a tour of a substation that was built from the looks of it in the 50s. I have, you see, this bad habit of leaning on things… well Mr. T, without missing a beat, slid his forearm between my hip and a faded green Bakelite knob, the kind that goes in and out rather than twisting. He informed me that if I had leaned any further I would have shut off half of Newark."
+        },
+        {
+          "id": 47467062,
+          "by": "BubbleRings",
+          "text": "Somebody make a keyboard where every key is a molly guard, where only one will open at a time, then make a fun video about it. And credit me for this stupid idea. Even though it wasn’t my idea."
+        },
+        {
+          "id": 47465907,
+          "by": "stevage",
+          "text": "I feel like modern tv remotes are the opposite of this principle. It is often the case that almost every single button will when pushed in some way interrupt the current program, often jumping out to a different menu or changing to a different program or something. It makes handling the remote or trying to change the volume a fraught experience."
+        },
+        {
+          "id": 47463638,
+          "by": "jiehong",
+          "text": "Oh! Then perhaps the long press required for the iPhone’s action button to trigger is a Molly guard!\nAlso, perhaps `rm` should be molly guarded to move things to the trash on all systems by default, and delete only if forced to by a flag.\nNote: I’d have expected Molly to be a cat, because they tend to be pretty good at disrupting things in my experience."
+        },
+        {
+          "id": 47467592,
+          "by": "1970-01-01",
+          "text": "See also: <a href=\"https:&#x2F;&#x2F;blog.nuclearsecrecy.com&#x2F;2013&#x2F;09&#x2F;27&#x2F;final-switch-goldsboro-1961&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;blog.nuclearsecrecy.com&#x2F;2013&#x2F;09&#x2F;27&#x2F;final-switch-gold...</a>"
+        }
+      ],
+      "deepseek": {
+        "model": "deepseek-chat",
+        "generatedAt": "2026-03-21T15:23:37.158Z",
+        "titleZh": "Molly Guard：防止误操作的安全机制",
+        "articleSummary": "由于外链正文无法获取，文章摘要基于标题与评论材料归纳。Molly Guard 是一种防止意外操作的安全机制，源自 Ed Krol 女儿的名字，常用于技术领域，如软件中拦截关机命令以避免误关远程服务器。",
+        "commentSummary": "评论讨论了 Molly Guard 的概念及其在 DevOps 和日常生活中的应用，如与 Poka-Yoke（防错设计）的关联，举例包括汽车换挡、电水壶安全设计和三星炉灶召回事件。用户还分享了个人经历，如误触变电站开关的风险，并延伸至现代电视遥控器设计缺陷和 iPhone 操作按钮的长按机制，整体态度积极，强调防错设计的重要性。",
+        "articleBodyChars": 0,
+        "error": null
+      }
+    },
+    {
+      "rank": 9,
+      "item": {
+        "by": "notcodingtoday",
+        "descendants": 39,
+        "id": 47435081,
+        "kids": [
+          47464507,
+          47466041,
+          47466214,
+          47465485,
+          47465891,
+          47464490,
+          47464692,
+          47435082,
+          47465202,
+          47466318,
+          47466168,
+          47464492
+        ],
+        "score": 106,
+        "time": 1773895773,
+        "title": "Fujifilm X RAW STUDIO webapp clone",
+        "type": "story",
+        "url": "https://github.com/eggricesoy/filmkit"
+      },
+      "comments": [
+        {
+          "id": 47466041,
+          "by": "enigmaticboom",
+          "text": "Love this - had contemplated different setups for getting raw studio running on linux but gave up before even trying. This is exactly what I wanted - a way to play with different recipes, no install required.\nIt bugs out for my XT30 because the profile is a different format, but claude was able to figure out a tweak to get it running and hide some of the features the XT30 is too old for - will do the wireshark thing from a windows machine at some point.\nThank you!"
+        },
+        {
+          "id": 47466214,
+          "by": "petee",
+          "text": "Great to see more Fuji X attention, their native software isn&#x27;t great. Looking forward to trying it out with my older X-T20, which appears supported[1] surprisingly\nI was about to mention the Fudge[2]  app and its underlying library, but its already listed as a reference, nice!\n[1] <a href=\"https:&#x2F;&#x2F;www.fujifilm-x.com&#x2F;en-us&#x2F;support&#x2F;compatibility&#x2F;software&#x2F;x-raw-studio&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.fujifilm-x.com&#x2F;en-us&#x2F;support&#x2F;compatibility&#x2F;softw...</a>\n[2] <a href=\"https:&#x2F;&#x2F;github.com&#x2F;petabyt&#x2F;fudge\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;petabyt&#x2F;fudge</a>"
+        },
+        {
+          "id": 47465485,
+          "by": "asah",
+          "text": "Worked!!  Samsung Galaxy fold 7, Chrome 146.0.7680.153, GFX 100S II firmware 1.20\nMacOS 15.6.1 - could see the camera via PTP but couldn&#x27;t connect (clicking &quot;connect&quot; didn&#x27;t do anything, no error)"
+        },
+        {
+          "id": 47465891,
+          "by": "deanc",
+          "text": "This is pretty impressive work.\nOn a related note, Fuji’s simulations being locked to their walled garden has been an issue for third party tools forever. All “replications” of on device are just that. And never comparable.\nI think a lot of people would like to study how they work to create true replications."
+        },
+        {
+          "id": 47464490,
+          "by": "zx8080",
+          "text": "&gt; FilmKit uses WebUSB to connect directly to your camera, your camera&#x27;s own image processor handles the conversion. FilmKit is a static client-side app, hosted on Github Pages"
+        },
+        {
+          "id": 47464692,
+          "by": "karmasimida",
+          "text": "The only reliable raw converter that can handle Fuji color is Capture One. But they have collaboration with Fuji, I don&#x27;t believe that conversion algorithm is open sourced.\nBut it would be interesting if AI coding agent could potentially reverse engineer the algorithm."
+        },
+        {
+          "id": 47435082,
+          "by": "notcodingtoday",
+          "text": "Wanted to edit camera profiles on Linux, couldn&#x27;t get the official app to run in Wine, so I built my own <a href=\"https:&#x2F;&#x2F;filmkit.eggrice.soy\" rel=\"nofollow\">https:&#x2F;&#x2F;filmkit.eggrice.soy</a>\nI also personally find the original app infuriating to use, takes a lot of click &amp; wait to modify a profile."
+        },
+        {
+          "id": 47465202,
+          "by": "heipei",
+          "text": "This is amazing, thank you for launching it. I know this webapp itself will make me more likely to look at raw photos on my Fuji once again."
+        },
+        {
+          "id": 47466318,
+          "by": "p5v",
+          "text": "Interesting, I’ll check it out. But just like X RAW studio, I bet that it won’t work with my old X-E1."
+        },
+        {
+          "id": 47466168,
+          "by": "pjmlp",
+          "text": "A ChromeOS Platform application, rather."
+        }
+      ],
+      "deepseek": {
+        "model": "deepseek-chat",
+        "generatedAt": "2026-03-21T15:23:49.545Z",
+        "titleZh": "Fujifilm X RAW STUDIO 网页应用克隆版 FilmKit",
+        "articleSummary": "FilmKit 是一个基于浏览器的预设管理器和 RAW 转换器，专为富士 X 系列相机设计，支持桌面和移动设备。它通过 WebUSB 直接连接相机，利用相机自身的图像处理器进行转换，无需安装，跨平台运行（包括 Linux）。核心功能包括相机预设管理、本地预设库、RAW 转换与实时预览、预设检测、导入导出以及快速比较。应用目前处于测试阶段，主要在 X100VI 上验证，但理论上兼容其他支持富士 RAW 转换协议的相机；作者通过逆向工程 PTP 协议实现，并提供了使用 Wireshark 捕获 US…",
+        "commentSummary": "评论普遍赞赏 FilmKit 解决了富士官方软件在 Linux 等平台上的兼容性问题，并提供了更便捷的预设管理体验。用户分享了在不同相机型号（如 XT30、X-T20、GFX 100S II）上的测试结果，部分遇到兼容性问题但通过调整解决，同时期待扩展对旧型号的支持。讨论还涉及富士胶片模拟的封闭性，第三方工具难以真正复制，以及 Capture One 作为可靠转换器的局限性；整体态度积极，认为该项目提升了富士相机用户的 RAW 处理灵活性。",
+        "articleBodyChars": 4869,
+        "error": null
+      }
+    },
+    {
+      "rank": 10,
+      "item": {
+        "by": "acc_10000",
+        "descendants": 3,
+        "id": 47428544,
+        "kids": [
+          47428545,
+          47467515,
+          47467508
+        ],
+        "score": 14,
+        "time": 1773854524,
+        "title": "How HN: Ironkernel – Python expressions, Rust parallel",
+        "type": "story",
+        "url": "https://github.com/YuminosukeSato/ironkernel"
+      },
+      "comments": [
+        {
+          "id": 47428545,
+          "by": "acc_10000",
+          "text": "I built this after watching 7&#x2F;8 CPU cores idle during a Monte Carlo sim. multiprocessing added 189ms serialization overhead to a 9ms computation.\nironkernel lets you write element-wise expressions with a Python decorator, compiles them to a Rust expression tree at definition time, and executes via rayon on all cores. ~2k lines of Rust, ~500 lines of Python.\nThe win is expression fusion: NumPy evaluates `where(x &gt; 0, sqrt(abs(x)) + sin(x), 0)` as 5 passes with 4 temporaries. ironkernel fuses into 1 pass, zero temporaries, and skips dead branches (no NaN from sqrt of negatives). 2.25x NumPy on compound expressions at 10M elements. For BLAS ops like SAXPY, NumPy is faster — ironkernel doesn&#x27;t call BLAS.\nEarly stage: f64 only, 1-D only, expression subset only (intentional — parallel safety guarantee). Numba warm is 3.2x faster (LLVM JIT vs interpreter)."
+        },
+        {
+          "id": 47467515,
+          "by": "ata-sesli",
+          "text": "The expression fusion win is huge for cache locality. Since you&#x27;re using Rayon for the multicore side, I&#x27;m curious if the generated Rust expression tree is &#x27;flat&#x27; enough for LLVM to trigger auto-vectorization (SIMD) on the individual cores or if the tree traversal adds enough branching to break that?"
+        },
+        {
+          "id": 47467508,
+          "by": "KeplerBoy",
+          "text": "For the love of god, don&#x27;t use these ai generated infographics&#x2F;diagrams.\nIf that&#x27;s your bar for quality, I&#x27;ll think less of your code. I can&#x27;t help it.\nAlso your saxpy example seems to be daxpy. s and d are short for single or double precision."
+        }
+      ],
+      "deepseek": {
+        "model": "deepseek-chat",
+        "generatedAt": "2026-03-21T15:24:01.969Z",
+        "titleZh": "Ironkernel：用 Python 表达、Rust 并行执行的计算引擎",
+        "articleSummary": "Ironkernel 是一个开源项目，允许用户在 Python 中编写类似 NumPy 的表达式，然后在 Rust 运行时中并行执行，绕过 Python 的全局解释器锁（GIL）。它通过装饰器或手动构建表达式树定义计算，使用 Rayon 自动利用所有 CPU 核心，并支持 Go 风格的通道和 select 实现并发管道。项目提供安装指南、基本用法示例（如 SAXPY、数学函数、归约、ReLU 和通道操作），以及 API 参考，强调表达式融合优势，将多步 NumPy 操作合并为单次传递以减少临时内…",
+        "commentSummary": "评论者讨论了 Ironkernel 的性能优势，特别是表达式融合对缓存局部性的提升，以及使用 Rayon 实现多核并行。有人询问生成的 Rust 表达式树是否足够扁平以触发 LLVM 的自动向量化（SIMD），还是树遍历的分支会阻碍优化。另一条评论批评了项目可能使用 AI 生成的图表，认为这影响代码质量感知，并指出示例中的 SAXPY 实际应为 DAXPY（双精度版本）。整体上，评论聚焦于技术细节、性能潜力和项目质量方面。",
+        "articleBodyChars": 8783,
+        "error": null
+      }
+    },
+    {
+      "rank": 11,
+      "item": {
+        "by": "n1b0m",
+        "descendants": 101,
+        "id": 47467034,
+        "kids": [
+          47467699,
+          47467675,
+          47467346,
+          47467204,
+          47467438,
+          47467212,
+          47467701,
+          47467396,
+          47467342,
+          47467615,
+          47467264,
+          47467733,
+          47467355,
+          47467545
+        ],
+        "score": 81,
+        "time": 1774101142,
+        "title": "Why western carmakers' retreat from electric risks dooming them to irrelevance",
+        "type": "story",
+        "url": "https://www.theguardian.com/business/2026/mar/21/west-carmakers-retreat-electric-vehicle-risks-irrelevance-iran-war-evs-china"
+      },
+      "comments": [
+        {
+          "id": 47467699,
+          "by": "simonw",
+          "text": "The other day I was joking with friends about how I&#x27;d love to have a car with a deployable surveillance drone to help with parking and so if I&#x27;m stuck in traffic I could have my drone scout ahead and see what&#x27;s up.\nTurns out BYD have one of those already! <a href=\"https:&#x2F;&#x2F;www.theverge.com&#x2F;news&#x2F;622963&#x2F;byd-dji-vehicle-mounted-drone-launcher\" rel=\"nofollow\">https:&#x2F;&#x2F;www.theverge.com&#x2F;news&#x2F;622963&#x2F;byd-dji-vehicle-mounted...</a>"
+        },
+        {
+          "id": 47467675,
+          "by": "M0r13n",
+          "text": "I&#x27;ve had a rough time with the last two EVs I&#x27;ve owned. I bought a Honda e in 2020 because of its retro-future charm, but ended up being disappointed by several things:\n- the range was miserable\n- the software quality was bad\n- no OTA updates ever (despite Honda&#x27;s promises)\n- slow charging\n- poor public charging infrastructure in Germany\nI should have known that a 35 kW battery wouldn&#x27;t deliver great range or charging speed. But I didn&#x27;t fully appreciate how limiting it would be.\nLast year, I bought a new Mini Cooper e. Larger battery. Better software. BMW&#x27;s quality actually delivered this time. The car feels objectively nice. The software is polished. There are updates. Few bugs. But the range still leaves something to be desired. In summer it&#x27;s okay. During winter 30-40% of the range just melts away.\nPublic charging in Northern Germany still sucks:\n- too few public chargers\n- chargers are often broken or out of service\n- pricing is intransparent\nMunicipal utility companies (&quot;Stadtwerke&quot;) seem especially bad at maintaining their charger fleets. Every second charger that I want to use is out of service. The one next to my apartment has b…"
+        },
+        {
+          "id": 47467346,
+          "by": "izacus",
+          "text": "VAG group has EVs (and pretty good ones) across the board: VW with ID series, Škoda with Enyaq&#x2F;Elroq&#x2F;Epiq, Audi with eTron series (SUV, sedan and estate), SEAT with Cupra Born and others. BMW just launched Neue Klasse, with iX3 selling like hot cakesa nd i3 looking amazing, with i7 in pipeline. Mercedes also launched a great new platform with CLA which is coming to other sizes as well.\nMeanwhile, Renault 5 is selling very well with Renault 4 in the pipeline. Zoes have been selling well too. Peugeot also has good EV models (208 is really fun to drive).\nThere pretty much isn&#x27;t a single European car manufacturer that wouldn&#x27;t have a compact car or an SUV in EV market and most of them have good range, decent pricing and are moving to 800V platforms as well.\nSooo... where&#x27;s the retreat?"
+        },
+        {
+          "id": 47467204,
+          "by": "tahoeskibum",
+          "text": "Weird headline: Japanese carmakers are doing the same error, while Tesla (an American company) is the one of the leading electric carmakers... I&#x27;d just replace it with Legacy Carmakers (e.g. Ford, GM, Toyota and so on)."
+        },
+        {
+          "id": 47467438,
+          "by": "thyristan",
+          "text": "Western car makers learned the hard lesson that, at least in most of Europe, electricity prices are far too high, EV prices are too high, and customers do know how to use their calculators. In Germany, the only thing propping up the EV market are tax subsidies for commercially used EVs, so company cars are very likely to be EV or at least hybrid. For the rest of sales? Only idealists buy EVs, and then only those with deeper pockets, their own home charger, etc.\nThe current third oil crisis won&#x27;t change much in this picture, because while fossil fuel prices have gone up, electricity prices are also starting to react and rise. That&#x27;s because electricity demand rises, some industrial users can either use electricity or gas. And because gas prices are rising, which influence a small but very important part of electricity generation: on-demand gas power plants, that smooth out the sharp variations in renewable generation and demand.\nAnd in the one important area of EV construction that makes a real difference, batteries, they tried and failed horribly. Everything else isn&#x27;t really that special or EV-specific. So this winding down is just admitting that they already failed…"
+        },
+        {
+          "id": 47467212,
+          "by": "fullshark",
+          "text": "Isn&#x27;t it over and China owns this market anyway?  How can any other country possibly compete?"
+        },
+        {
+          "id": 47467701,
+          "by": "sirjaz",
+          "text": "But what about Hydrogen? Many ICE companies would be better to focus on that. It would allow legacy vehicles to stay on the road, and fix the range anxiety in places like the US which is way bigger than all of the EU and bigger than the populated parts of China."
+        },
+        {
+          "id": 47467396,
+          "by": "orange_joe",
+          "text": "America clearly has an EV industry (Tesla, Rivian) but its adoption is pretty limited by infrastructure."
+        },
+        {
+          "id": 47467342,
+          "by": "froh",
+          "text": "I see two things discussed too little:\n* in the ICE world, California and EU norms created a tight barrier to entry.   the patent portfolio protected the old automotive industry.  they only built their patent protected ICEs, and they bought everything else from suppliers.\n  electric circumvents that barrier and that enabled dozens of new automotive OEMs:  the first big disruptor\n\n* automotive has created amazing r&amp;d processes for the mechanical vehicle design.  they are centered around early decomposition, isolated component engineering and then composition.  integration in that world men&#x27;s:  screwing and plugging the pets together.  if the hinges and flanges are to spec things integrate nicely.\n  too bad the hard part for software instead is system integration.  consistency cross all components.\n\n  all the great hardware engineering processes are completely ND utterly misguided for software system engineering.. integrate rely, often, continuously vs clearly specified interfaces and isolated component engineering with expensive and thus relatively rare integration.\n\n\n  that&#x27;s IMHO the second disruption for automotive."
+        },
+        {
+          "id": 47467615,
+          "by": "DeathArrow",
+          "text": "Somehow having freedom to choose is bad?"
+        },
+        {
+          "id": 47467264,
+          "by": "joe_mamba",
+          "text": "I think Ferrari, Lambo, Rolls Royce, Bugatti, Zonda etc. will do just fine with  selling luxury ICEs with many cylinders that go vroom to rich people. In fact they&#x27;ll probably do better as global wealth gap increases.\nIt&#x27;s the Audis, BMWs, Mercedes, etc of Europe they&#x27;ll probably end up the way of Philips, Blaupunkt, Alcatel, Grundig, Nokia, Thomson, Gigaset, SAgem, etc. meaning selling off their consumer civilian operations to chinese OEMs and all that remain will be the recognizable name badge put on imported Chinese components assembled in EU, while the small remaining European operations focus on vehicles and powertrains for defense&#x2F;naval&#x2F;aerospace&#x2F;etc."
+        },
+        {
+          "id": 47467733,
+          "by": "passive",
+          "text": "In the US, automakers are still a big source of union power, which is at least part of the reason Trump is pushing them to drop EVs.\nIn a fascist state, you want all powerful industries closely tied to the rulers."
+        }
+      ],
+      "deepseek": {
+        "model": "deepseek-chat",
+        "generatedAt": "2026-03-21T15:24:31.114Z",
+        "titleZh": "西方车企退出电动汽车市场或将导致其走向边缘化",
+        "articleSummary": "材料中未提供外链正文，依据标题与评论归纳：文章可能探讨西方汽车制造商在电动汽车领域的退缩趋势，如减少投资或放缓转型，这可能导致它们在面对中国等竞争对手时失去市场相关性，面临被淘汰的风险。",
+        "commentSummary": "评论区观点多样：部分用户质疑西方车企是否真的在撤退，指出欧洲品牌如大众、宝马等已推出多款电动汽车且市场表现良好；其他讨论聚焦于电动汽车的实际问题，如续航不足、充电基础设施差、高电价和电池技术落后，以及氢能源作为替代方案的潜力；还有评论提到软件集成挑战、政治因素如美国工会影响，以及中国在电动汽车市场的优势地位，整体反映了对西方车企转型能力的担忧和争议。",
+        "articleBodyChars": 0,
+        "error": null
+      }
+    },
+    {
+      "rank": 12,
+      "item": {
+        "by": "NaOH",
+        "descendants": 17,
+        "id": 47433755,
+        "kids": [
+          47466188,
+          47467257,
+          47467215,
+          47467629,
+          47465866,
+          47467378
+        ],
+        "score": 25,
+        "time": 1773884723,
+        "title": "The Story of Marina Abramovic and Ulay (2020)",
+        "type": "story",
+        "url": "https://www.sydney-yaeko.com/artsandculture/marina-and-ulay"
+      },
+      "comments": [
+        {
+          "id": 47466188,
+          "by": "subpixel",
+          "text": "For decades, I have successfully used reverence for Marina Abramovic as an attribute to filter out persons with whom I am incompatible."
+        },
+        {
+          "id": 47467257,
+          "by": "axpy906",
+          "text": "Isn’t that the soul cooking lady from the Podesta files?\nEdit: yup looks like it"
+        },
+        {
+          "id": 47467215,
+          "by": "smartbit",
+          "text": "Walk Through Walls: A Memoir <a href=\"https:&#x2F;&#x2F;www.penguin.co.uk&#x2F;books&#x2F;288046&#x2F;walk-through-walls-by-abramovic-marina&#x2F;9780241974520\" rel=\"nofollow\">https:&#x2F;&#x2F;www.penguin.co.uk&#x2F;books&#x2F;288046&#x2F;walk-through-walls-by...</a> also covers her relationship with Ula.\nEasy read, personal &amp; entertaining. Highly recommended."
+        },
+        {
+          "id": 47467629,
+          "by": "lpd59",
+          "text": "These self-proclaimed conceptual artists entire &#x27;work&#x27; consists of doing stupid and pointless things in public to get money and attention and then act pretentiously about it.\nIn other words, they invented the concept of influencer 30 or 40 years before it was mainstream on the internet."
+        },
+        {
+          "id": 47465866,
+          "by": "incognito124",
+          "text": "Having ć symbol stand out because the font does not support it is a story way too familiar to anyone from Balkans"
+        },
+        {
+          "id": 47467378,
+          "by": "zoklet-enjoyer",
+          "text": "She&#x27;s always been so cringey. Like when she let people beat her up and called it art."
+        }
+      ],
+      "deepseek": {
+        "model": "deepseek-chat",
+        "generatedAt": "2026-03-21T15:24:35.507Z",
+        "titleZh": "",
+        "articleSummary": "",
+        "commentSummary": "",
+        "articleBodyChars": 12001,
+        "error": "Error: 400 Content Exists Risk"
+      }
+    }
+  ]
+}
