@@ -16,7 +16,7 @@ import OpenAI from "openai";
 
 const HN_BASE = "https://hacker-news.firebaseio.com/v0";
 const DEEPSEEK_BASE = "https://api.deepseek.com";
-const DEFAULT_MODEL = "deepseek-chat";
+const DEFAULT_MODEL = "deepseek-v4-flash";
 const DEFAULT_JSON_OUT = "hn-snapshot.json";
 /** 热门榜取前几条：可用环境变量 HN_TOP_N 覆盖默认 12 */
 const DEFAULT_TOP_STORIES = "12";
