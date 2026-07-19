@@ -7,9 +7,9 @@
 
 import "dotenv/config";
 import { Readability } from "@mozilla/readability";
-import { writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { JSDOM } from "jsdom";
-import { resolve } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { parseArgs } from "node:util";
 import { Agent, fetch as undiciFetch } from "undici";
 import OpenAI from "openai";
@@ -85,6 +85,10 @@ function printHelp() {
   HN_CONNECT_TIMEOUT_MS     连接 HN API 的超时（默认 60000）
   HN_BODY_TIMEOUT_MS        读响应体超时（默认 120000）
   HN_FETCH_RETRIES          拉取 HN 失败时的重试次数（默认 3，最大 8）
+
+存档:
+  除主 JSON 外，会写入同目录 archives/YYYY-MM-DD.json（日期按北京时间），
+  并更新 archives/index.json 供网页浏览历史。
 `.trim());
 }
 
@@ -430,6 +434,76 @@ function parseDeepseekOutput(text) {
   }
 }
 
+/** 存档日期：北京时间 YYYY-MM-DD */
+function archiveDateBeijing(isoOrDate = new Date()) {
+  const d = isoOrDate instanceof Date ? isoOrDate : new Date(isoOrDate);
+  if (Number.isNaN(d.getTime())) {
+    return archiveDateBeijing(new Date());
+  }
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(d);
+}
+
+/**
+ * 写入 archives/YYYY-MM-DD.json，并合并更新 archives/index.json。
+ * @param {string} outputPath 主快照路径（存档目录为其同级 archives/）
+ * @param {{ meta: Record<string, unknown>, stories: unknown[] }} doc
+ * @param {{ info: Function }} log
+ */
+async function saveArchive(outputPath, doc, log) {
+  const outDir = dirname(resolve(outputPath));
+  const archiveDir = join(outDir, "archives");
+  await mkdir(archiveDir, { recursive: true });
+
+  const date =
+    typeof doc.meta?.archiveDate === "string" && /^\d{4}-\d{2}-\d{2}$/.test(doc.meta.archiveDate)
+      ? doc.meta.archiveDate
+      : archiveDateBeijing(
+          /** @type {string} */ (doc.meta?.deepseekCompletedAt || doc.meta?.hnFetchedAt)
+        );
+
+  const archiveDoc = {
+    ...doc,
+    meta: {
+      ...doc.meta,
+      archiveDate: date,
+    },
+  };
+  const dayPath = join(archiveDir, `${date}.json`);
+  await writeFile(dayPath, JSON.stringify(archiveDoc, null, 2), "utf8");
+
+  /** @type {Set<string>} */
+  const dates = new Set();
+  const indexPath = join(archiveDir, "index.json");
+  try {
+    const prev = JSON.parse(await readFile(indexPath, "utf8"));
+    if (Array.isArray(prev.dates)) {
+      for (const d of prev.dates) {
+        if (typeof d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d)) dates.add(d);
+      }
+    }
+  } catch {
+    /* 无旧索引 */
+  }
+  try {
+    for (const name of await readdir(archiveDir)) {
+      if (/^\d{4}-\d{2}-\d{2}\.json$/.test(name)) dates.add(name.slice(0, 10));
+    }
+  } catch {
+    /* ignore */
+  }
+  dates.add(date);
+  const sorted = [...dates].sort((a, b) => b.localeCompare(a));
+  const index = { latest: sorted[0] || date, dates: sorted };
+  await writeFile(indexPath, JSON.stringify(index, null, 2) + "\n", "utf8");
+  log.info(`已写入存档: ${dayPath}（共 ${sorted.length} 天）`);
+  return date;
+}
+
 /**
  * @param {string} outputPath
  * @param {{
@@ -450,6 +524,7 @@ function parseDeepseekOutput(text) {
  */
 async function saveHnJson(outputPath, data, log) {
   const abs = resolve(outputPath);
+  const archiveDate = archiveDateBeijing(data.deepseekCompletedAt || data.hnFetchedAt);
   const doc = {
     meta: {
       hnFetchedAt: data.hnFetchedAt,
@@ -460,11 +535,13 @@ async function saveHnJson(outputPath, data, log) {
       topCommentsLimit: data.topComments,
       topStoryIds: data.topStoryIds,
       fetchedAt: data.deepseekCompletedAt,
+      archiveDate,
     },
     stories: data.stories,
   };
   await writeFile(abs, JSON.stringify(doc, null, 2), "utf8");
   log.info(`已保存完整快照（HN + DeepSeek）至 JSON: ${abs}`);
+  await saveArchive(outputPath, doc, log);
 }
 
 /**

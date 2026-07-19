@@ -15,8 +15,11 @@ on:
       - "package.json"
       - "package-lock.json"
       - "index.html"
+      - "archives.html"
       - "viewer.css"
       - "viewer.js"
+      - "viewer-core.js"
+      - "archives.js"
 
 permissions:
   contents: read
@@ -44,6 +47,74 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Prepare site + restore archives
+        run: |
+          set -euo pipefail
+          mkdir -p site/archives
+          cp index.html archives.html viewer.css viewer.js viewer-core.js archives.js site/
+          : > site/.nojekyll
+          # 仓库内已提交的存档（如种子数据）
+          if [ -d archives ]; then
+            cp -a archives/. site/archives/
+          fi
+          # 从已上线的 Pages 拉回历史，避免每次部署覆盖丢失
+          OWNER="${GITHUB_REPOSITORY_OWNER}"
+          REPO="${GITHUB_REPOSITORY#*/}"
+          BASE="https://${OWNER}.github.io/${REPO}"
+          export PAGES_BASE="${BASE}"
+          node --input-type=module <<'EOF'
+          import { mkdir, writeFile } from "node:fs/promises";
+          import { join } from "node:path";
+
+          const base = (process.env.PAGES_BASE || "").replace(/\/$/, "");
+          if (!base) {
+            console.log("skip archive restore: no PAGES_BASE");
+            process.exit(0);
+          }
+          const dir = "site/archives";
+          await mkdir(dir, { recursive: true });
+          let index;
+          try {
+            const res = await fetch(`${base}/archives/index.json`, {
+              headers: { Accept: "application/json" },
+            });
+            if (!res.ok) {
+              console.log(`no live archive index (${res.status}), continue`);
+              process.exit(0);
+            }
+            index = await res.json();
+          } catch (e) {
+            console.log("archive restore skipped:", e && e.message ? e.message : e);
+            process.exit(0);
+          }
+          const dates = Array.isArray(index.dates) ? index.dates : [];
+          let ok = 0;
+          for (const d of dates) {
+            if (typeof d !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(d)) continue;
+            try {
+              const r = await fetch(`${base}/archives/${d}.json`);
+              if (!r.ok) continue;
+              await writeFile(join(dir, `${d}.json`), await r.text(), "utf8");
+              ok++;
+            } catch {
+              /* keep going */
+            }
+          }
+          await writeFile(
+            join(dir, "index.json"),
+            JSON.stringify(
+              {
+                latest: index.latest || dates[0] || "",
+                dates,
+              },
+              null,
+              2
+            ) + "\n",
+            "utf8"
+          );
+          console.log(`restored ${ok}/${dates.length} archive day(s) from ${base}`);
+          EOF
+
       - name: Build site (snapshot + static files)
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -51,9 +122,6 @@ jobs:
           HN_FETCH_RETRIES: "5"
         run: |
           set -e
-          mkdir -p site
-          cp index.html viewer.css viewer.js site/
-          : > site/.nojekyll
           node hn_deepseek.js -o site/hn-snapshot.json
 
       - name: Upload Pages artifact

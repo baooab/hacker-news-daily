@@ -3,22 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hacker News Daily · 本地摘要</title>
+    <title>全部存档 · Hacker News Daily</title>
     <link rel="stylesheet" href="viewer.css" />
   </head>
-  <body>
+  <body class="page-archives">
     <div id="hn-top">
       <table>
         <tr>
           <td class="hn-top-brand">
             <span class="hn-logo" aria-hidden="true"></span>
             <span class="hn-brand"><a href="https://news.ycombinator.com/" target="_blank" rel="noopener noreferrer">Hacker News</a></span>
-            <span class="hn-pagename">Daily</span>
+            <span class="hn-pagename">Daily · 全部存档</span>
           </td>
           <td class="hn-top-archive">
-            <label class="hn-archive-label" for="hn-archive-select">存档</label>
-            <select id="hn-archive-select" aria-label="最近 30 天存档"></select>
-            <a class="hn-top-link" id="hn-archive-more" href="archives.html">全部存档</a>
+            <a class="hn-top-link" href="index.html">返回首页</a>
           </td>
         </tr>
       </table>
@@ -27,15 +25,26 @@
     <div id="hn-error" hidden></div>
 
     <div id="hn-main">
-      <table class="item-list" id="hn-item-table">
-        <tbody id="hn-items"></tbody>
-      </table>
+      <p id="hn-archive-back" class="archive-back" hidden>
+        <a href="archives.html">← 全部存档</a>
+        <span id="hn-archive-day-title" class="archive-day-title" hidden></span>
+      </p>
+
+      <div id="hn-archive-list-wrap">
+        <div id="hn-archive-list"></div>
+      </div>
+
+      <div id="hn-archive-detail" hidden>
+        <table class="item-list" id="hn-item-table">
+          <tbody id="hn-items"></tbody>
+        </table>
+      </div>
     </div>
 
     <div id="hn-footer">
       <div id="hn-meta-line" class="hn-meta-banner"></div>
     </div>
 
-    <script src="viewer.js" type="module"></script>
+    <script src="archives.js" type="module"></script>
   </body>
 </html>

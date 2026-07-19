@@ -70,6 +70,94 @@ a:hover {
   color: #000000;
 }
 
+.hn-pagename {
+  margin-left: 8px;
+  font-size: 10pt;
+  color: #000000;
+}
+
+.hn-top-brand {
+  white-space: nowrap;
+}
+
+.hn-top-archive {
+  text-align: right;
+  white-space: nowrap;
+  padding-left: 12px;
+}
+
+.hn-archive-label {
+  font-size: 9pt;
+  color: #000000;
+  margin-right: 4px;
+}
+
+#hn-archive-select {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 9pt;
+  color: #000000;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  max-width: 11em;
+  vertical-align: middle;
+}
+
+.hn-top-link {
+  margin-left: 8px;
+  font-size: 9pt;
+  color: #000000;
+  vertical-align: middle;
+}
+
+.hn-top-link:hover {
+  text-decoration: underline;
+}
+
+.archive-back {
+  margin: 0 0 12px;
+  font-size: 9pt;
+  color: var(--hn-meta);
+}
+
+.archive-back a {
+  color: var(--hn-meta);
+}
+
+.archive-day-title {
+  margin-left: 10px;
+  color: var(--hn-text);
+}
+
+.archive-month {
+  margin-bottom: 18px;
+}
+
+.archive-month-title {
+  margin: 0 0 8px;
+  font-size: 10pt;
+  font-weight: bold;
+  color: var(--hn-text);
+}
+
+.archive-date-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+}
+
+.archive-date-list a {
+  font-size: 9pt;
+  color: var(--hn-text);
+}
+
+.archive-date-list a.is-active {
+  font-weight: bold;
+  color: var(--hn-orange);
+}
+
 #hn-main {
   width: 100%;
   max-width: var(--content-max);

@@ -55,13 +55,15 @@ node hn_deepseek.js
 npm run serve
 ```
 
-在浏览器打开终端提示的地址（一般为 `http://localhost:8080`），进入 **`/index.html`** 即可查看条目、**DeepSeek 中文摘要**（若 JSON 中含 `deepseek` 字段）与可展开的顶层评论。
+在浏览器打开终端提示的地址（一般为 `http://localhost:8080`），进入 **`/index.html`** 即可查看条目与 **DeepSeek 中文摘要**（若 JSON 中含 `deepseek` 字段）。顶栏 **存档** 下拉仅含**最近 30 天**；更早日期请打开 **`/archives.html`**（或首页「全部存档」）。也可使用 `/index.html#YYYY-MM-DD` / `/archives.html#YYYY-MM-DD`（超出 30 天时首页会跳到全部存档页）。
+
+每次运行脚本除写入 `hn-snapshot.json` 外，还会按**北京时间**写入 `archives/YYYY-MM-DD.json`，并更新 `archives/index.json`。同日重复运行会覆盖当天存档。
 
 ## GitHub Actions 与 GitHub Pages
 
 仓库含工作流 [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml)，会：
 
-- **定时**：每日 **北京时间 06:00**（UTC 22:00，cron `0 22 * * *`；若需按 UTC 午夜跑，可改为 `0 0 * * *`）执行 `node hn_deepseek.js -o site/hn-snapshot.json`，并把 `index.html`、`viewer.css`、`viewer.js` 与生成结果一并部署到 **GitHub Pages**。
+- **定时**：每日 **北京时间 06:00**（UTC 22:00，cron `0 22 * * *`；若需按 UTC 午夜跑，可改为 `0 0 * * *`）执行 `node hn_deepseek.js -o site/hn-snapshot.json`，并把静态页、最新快照与 **`archives/` 历史存档** 一并部署到 **GitHub Pages**（部署前会尝试从已上线站点拉回旧存档，避免被覆盖）。
 - **手动**：在仓库 **Actions** 中选择 **Deploy to GitHub Pages**，点击 **Run workflow**。
 - **推送**：向默认分支 **`main`** 推送并修改工作流所列路径（脚本、静态页、`package.json` 等）时也会触发构建（便于联调）。
 
